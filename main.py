@@ -32,18 +32,32 @@ def main():
             if len(input_text) == 0:
                 print("Please enter a prompt.")
                 continue
-
+            # ChatCompleteions API
+            # ====================
             # Get a response
-            completion = client.chat.completions.create(
+            # completion = client.chat.completions.create(
+            #     model=model_deployment,
+            #     messages=[
+            #         {
+            #             "role": "user",
+            #             "content": input_text,
+            #         }
+            #     ],
+            # )
+            # print(f"\nResponse:\n{completion.choices[0].message.content}")
+        
+        #    Responses API
+        # ===================
+            last_response_id = None  
+            response = client.responses.create(
                 model=model_deployment,
-                messages=[
-                    {
-                        "role": "user",
-                        "content": input_text,
-                    }
-                ],
+                # instructions="""You are a helpful assistant that hepls find information about the topic provided by the user. 
+                #                 Please provide a response in bullet points.""",
+                instructions="""You are a helpful assistant that helps translate the given user input.""",
+                input=input_text,
+                previous_response_id=last_response_id,
             )
-            print(f"\nResponse:\n{completion.choices[0].message.content}")  
+            print(f"\nResponse:\n{response.output_text}")
 
     except Exception as ex:
         print(ex)
