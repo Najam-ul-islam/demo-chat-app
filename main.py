@@ -6,10 +6,10 @@ from src.labs.L2_1_web_search_tool import web_search_tool
 from src.labs.L2_2_code_interpreter_tool import code_interpreter_tool
 
 def run(): 
-    # chat()
+    sync_chat()
     # asyncio.run(async_chat())
     # web_search_tool()
-    code_interpreter_tool()
+    # code_interpreter_tool()
 
 
 if __name__ == '__main__': 
