@@ -4,8 +4,8 @@ from src.labs.L1_1_sync_chat import sync_chat
 from src.labs.L1_2_async_chat import async_chat
 from src.labs.L2_1_web_search_tool import web_search_tool
 from src.labs.L2_2_code_interpreter_tool import code_interpreter_tool
-from src.labs.L4_rag_hybrid_search import run_agent
-
+# from src.labs.L4_rag_hybrid_search import run_agent
+from src.labs.st_hybrid_search import run_agent
 
 
 
